@@ -1,28 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char const *argv[])
 {
-    // int c3[3][3] = {
-    //     {0, 1, 5},
-    //     {10, 11, 12},
-    //     {1000, 101, 102},
-    // };
-    int c3[5][5] = {
-        {0, 1, 5, 12124, 1234},
-        {10, 11, 12, 123521, 12512},
-        {1000, 101, 102, 12545, 214543435},
-        {100, 1012451, 11102, 12545, 214543435},
-        {10, 12401, 10452, 11542545, 1214543435},
-    };
+   char *j;
 
-    int i = 0, sum1 = 0, sum2 = 0;
-    for (i = 0; i < 5; i++)
-    {
-        sum1 += c3[i][i];
-        sum2 += c3[i][3-1 - i];
-    }
+   j = malloc(sizeof(char) * 1024);
+   printf("%p\n", j);
+   free(j);
 
-    printf("%d\n", sum1);
-    printf("%d", sum2);
-   return 0;
+   return (0);
 }
