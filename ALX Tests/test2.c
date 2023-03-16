@@ -1,12 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char const *argv[])
-{
-    char *s = "Diana";
+int main() {
+    int *ptr;
+    int n = 5;
 
-    printf("%d\n", sizeof(s));
+    ptr = (int*)calloc(n, sizeof(int));
+
+    if (ptr == NULL) {
+        printf("Memory allocation failed.");
+        exit(1);
+    }
+
+    for (int i = 0; i < n; i++) {
+        ptr[i] = i + 1;
+    }
+
+    for (int i = 0; i < n; i++) {
+        printf("%d ", ptr[i]);
+    }
+
+    free(ptr);
+
     return 0;
 }
-
-        
