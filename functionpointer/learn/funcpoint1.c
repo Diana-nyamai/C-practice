@@ -10,4 +10,4 @@ int main(void)
     int (*ptr)(int, int) = &add;
     res = ptr(10, 3);
     printf("add: %d\n", res);
-}
+} 
