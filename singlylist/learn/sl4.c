@@ -7,7 +7,7 @@ struct node
     int data;
     struct node *link;
 };
-
+int addnode(struct node *firstnode, int n);
 int countnodes(struct node *firstnode);
 void print_list(struct node *firstnode);
 int main(void)
@@ -26,9 +26,25 @@ int main(void)
     secondnode -> link = NULL;
     firstnode -> link -> link = secondnode;
 
+    addnode(firstnode, 60);
     print_list(firstnode);
     countnodes(firstnode);
     return (0);
+}
+int addnode(struct node *firstnode, int n)
+{
+    struct node *ptr, *temp;
+
+    temp = malloc(sizeof(struct node));
+    temp->data = n;
+    temp->link = NULL;
+
+    ptr = firstnode;
+    while (ptr->link != NULL)
+    {
+        ptr = ptr->link;
+    }
+    ptr->link = temp;
 }
 void print_list(struct node *firstnode)
 {
