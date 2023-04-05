@@ -1,30 +1,34 @@
 #include <stdio.h>
-void add(int a, int b)
+
+int add(int a, int b)
 {
-	printf("Addition is %d\n", a+b);
-}
-void subtract(int a, int b)
-{
-	printf("Subtraction is %d\n", a-b);
-}
-void multiply(int a, int b)
-{
-	printf("Multiplication is %d\n", a*b);
+	return (a + b);
 }
 
-int main()
+int sub(int a, int b)
 {
-	// fun_ptr_arr is an array of function pointers
-	void (*fun_ptr_arr[])(int, int) = {add, subtract, multiply};
-	unsigned int ch, a = 15, b = 10;
+	return (a - b);
+}
 
-	printf("Enter Choice: 0 for add, 1 for subtract and 2 "
-			"for multiply\n");
-	scanf("%d", &ch);
+int mul(int a, int b)
+{
+	return (a * b);
+}
+int main(int argc, char const *argv[])
+{
+	int (*calculator[])(int, int) = {add, sub, mul};
+	int choice, a, b;
 
-	if (ch > 2) return 0;
+	printf("Enter the first number: \n");
+	scanf("%d", &a);
+	printf("Enter a choice: 0 for add, 1 for sub and 2 for multiplication\n");
+	scanf("%d", &choice);
+	printf("Enter the second number: \n");
+	scanf("%d", &b);
 
-	(*fun_ptr_arr[ch])(a, b);
+	if (choice > 2) return (0);
+	int res = (*calculator[choice])(a, b);
 
+	printf("The result is: %d", res);
 	return 0;
 }
