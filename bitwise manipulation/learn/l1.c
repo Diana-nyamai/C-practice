@@ -2,7 +2,7 @@
 
 int main(int argc, char const *argv[])
 {
-    int x = 7, y = 4;
+    int x = 7, y = 7;
 
     if (x&y)
         printf("%d\n", 1);
