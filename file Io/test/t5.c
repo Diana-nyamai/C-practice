@@ -1,3 +1,4 @@
+// fwrite concept
 #include <stdio.h>
 
 struct data
