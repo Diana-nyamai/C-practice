@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-
 int main(int argc, char *argv[])
 {
     FILE *stream;
@@ -23,7 +21,8 @@ int main(int argc, char *argv[])
 
     while ((nread = getline(&line, &len, stream)) != -1) {
         printf("Retrieved line of length %zu:\n", nread);
-        fwrite(line, nread, 1, stdout);
+        printf("%s", line);
+        // fwrite(line, nread, 1, stdout);
     }
 
     free(line);
