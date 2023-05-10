@@ -1,6 +1,7 @@
 // Example of a dprintf
 #include <stdio.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 int main(int argc, char const *argv[])
 {
